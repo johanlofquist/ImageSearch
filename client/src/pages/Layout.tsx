@@ -4,17 +4,17 @@ import { PageTitle } from "../components/PageTitle";
 
 export const Layout = () => {
   return (
-    <>
-      <header>
+    <div className="h-full bg-gradient-to-b from-violet-700 to-violet-500 font-sans text-2xl">
+      <header className="h-[20dvh]">
         <PageTitle />
       </header>
 
-      <main>
+      <main className="h-[70dvh]">
         <Outlet />
       </main>
-      <footer>
+      <footer className="h-[10dvh]">
         <Footer />
       </footer>
-    </>
+    </div>
   );
 };

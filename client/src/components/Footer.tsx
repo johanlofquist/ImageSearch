@@ -1,3 +1,9 @@
+import { FaGithub } from "react-icons/fa";
+
 export const Footer = () => {
-  return <h1>Footer!</h1>;
+  return (
+    <div className="flex justify-center items-center h-full">
+      <FaGithub className="text-5xl" />
+    </div>
+  );
 };
