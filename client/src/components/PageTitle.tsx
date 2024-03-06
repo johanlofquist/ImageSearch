@@ -1,6 +1,6 @@
 import { CiLogin } from "react-icons/ci";
 import { useAuth0 } from "@auth0/auth0-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { SideBar } from "./SideBar";
 
@@ -45,9 +45,7 @@ export const PageTitle = () => {
           onClick={() => loginWithRedirect()}
         />
       )}
-      <AnimatePresence>
-        {showMenu ? <SideBar showMenu={showMenu} /> : ""}
-      </AnimatePresence>
+      {showMenu ? <SideBar showMenu={showMenu} /> : ""}
     </div>
   );
 };
