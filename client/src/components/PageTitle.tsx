@@ -45,7 +45,7 @@ export const PageTitle = () => {
           onClick={() => loginWithRedirect()}
         />
       )}
-      {showMenu ? <SideBar showMenu={showMenu} /> : ""}
+      <SideBar showMenu={showMenu} />
     </div>
   );
 };
