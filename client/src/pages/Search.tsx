@@ -3,7 +3,6 @@ import { imageSearch } from "../services/ImageService";
 import { ChangeEvent, useState } from "react";
 import { ISearchResult } from "../models/searchResult";
 import { RenderImage } from "../components/RenderImage";
-import { SiPanasonic } from "react-icons/si";
 
 export const Search = () => {
   const { isAuthenticated } = useAuth0();
@@ -12,6 +11,12 @@ export const Search = () => {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value);
+  };
+
+  const handleCorrectedSearch = async (query: string | undefined) => {
+    const search: ISearchResult = await imageSearch(query as string);
+    setSearchResult(search);
+    setUserInput("");
   };
 
   return (
@@ -51,7 +56,18 @@ export const Search = () => {
           ""
         )}
         {searchResult && searchResult.spelling ? (
-          <span className="text-slate-300 text-sm mt-2">Did you mean {searchResult.spelling.correctedQuery}?</span>
+          <span className="text-slate-300 text-sm mt-2">
+            Did you mean{" "}
+            <button
+              className="text-white underline"
+              onClick={() => {
+                handleCorrectedSearch(searchResult.spelling?.correctedQuery);
+              }}
+            >
+              {searchResult.spelling.correctedQuery}
+            </button>
+            ?
+          </span>
         ) : (
           ""
         )}
