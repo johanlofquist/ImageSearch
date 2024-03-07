@@ -2,7 +2,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { CiLogout } from "react-icons/ci";
 import { motion } from "framer-motion";
 
-
 export const SideBar = () => {
   const { logout } = useAuth0();
 
