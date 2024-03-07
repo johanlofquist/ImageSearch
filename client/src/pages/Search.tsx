@@ -16,7 +16,7 @@ export const Search = () => {
   const handleCorrectedSearch = async (query: string | undefined) => {
     const search: ISearchResult = await imageSearch(query as string);
     setSearchResult(search);
-    setUserInput("");
+    setUserInput(query as string);
   };
 
   return (
@@ -37,7 +37,6 @@ export const Search = () => {
                 const search: ISearchResult = await imageSearch(userInput);
                 setSearchResult(search);
                 console.log(searchResult?.items);
-                setUserInput("");
               }}
             >
               GO
