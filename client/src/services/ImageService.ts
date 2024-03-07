@@ -1,5 +1,5 @@
 import { ISearchResult } from "../models/searchResult";
-import { get, post, put } from "./ServiceBase";
+import { get } from "./ServiceBase";
 
 
 
