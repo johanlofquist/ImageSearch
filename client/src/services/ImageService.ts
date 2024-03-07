@@ -1,4 +1,4 @@
-import { ISearchResult } from "../models/searchResult";
+import { ISearchResult } from "../models/SearchResult";
 import { get } from "./ServiceBase";
 
 

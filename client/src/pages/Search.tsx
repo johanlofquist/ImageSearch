@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { imageSearch } from "../services/ImageService";
 import { ChangeEvent, useState } from "react";
-import { ISearchResult } from "../models/searchResult";
 import { RenderImage } from "../components/RenderImage";
+import { ISearchResult } from "../models/SearchResult";
 
 export const Search = () => {
   const { isAuthenticated } = useAuth0();
