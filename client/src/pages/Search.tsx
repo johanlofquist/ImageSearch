@@ -71,7 +71,7 @@ export const Search = () => {
           ""
         )}
       </span>
-      <div className="flex flex-wrap gap-5 mt-10 justify-center items-center">
+      <div className="flex flex-wrap gap-5 mt-10 justify-center items-center w-[90%] m-auto">
         {searchResult
           ? searchResult.items.map((image) => <RenderImage url={image.link} />)
           : ""}
