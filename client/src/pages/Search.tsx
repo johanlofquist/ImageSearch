@@ -36,7 +36,6 @@ export const Search = () => {
               onClick={async () => {
                 const search: ISearchResult = await imageSearch(userInput);
                 setSearchResult(search);
-                console.log(searchResult?.items);
               }}
             >
               GO
@@ -73,7 +72,9 @@ export const Search = () => {
       </span>
       <div className="flex flex-wrap gap-5 mt-10 justify-center items-center w-[90%] m-auto">
         {searchResult
-          ? searchResult.items.map((image) => <RenderImage url={image.link} />)
+          ? searchResult.items.map((image) => (
+              <RenderImage url={image.link} title={image.title} />
+            ))
           : ""}
       </div>
     </>

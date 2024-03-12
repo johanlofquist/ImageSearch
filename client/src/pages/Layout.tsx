@@ -4,7 +4,7 @@ import { PageTitle } from "../components/PageTitle";
 
 export const Layout = () => {
   return (
-    <div className="h-full bg-gradient-to-b from-violet-500 to-slate-200 font-sans text-2xl">
+    <div className="min-h-full bg-gradient-to-b from-violet-500 to-slate-200 font-sans text-2xl">
       <header className="h-[20dvh]">
           <PageTitle />
       </header>

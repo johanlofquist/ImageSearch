@@ -1,10 +1,8 @@
 export interface ISearchResult {
-    context: {
-        title: string
-    }
     items: [
         {
-            link: string
+            link: string,
+            title: string
         }
     ]
     searchInformation: {

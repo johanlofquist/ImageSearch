@@ -1,5 +1,5 @@
 import { ISearchResult } from "../models/SearchResult";
-import { get } from "./ServiceBase";
+import { get, post } from "./ServiceBase";
 
 
 
@@ -10,3 +10,20 @@ export const imageSearch = async (query: string) => {
   console.log(response.data)
   return response.data;
 };
+
+export const saveImage = async (userId: string | undefined, imageUrl: string, title: string) => {
+  const data = {
+    userId: userId,
+    favorites: [
+      {
+        imageUrl,
+        title
+      }
+    ]
+  }
+  const response = await post(
+    `http://localhost:3000/api/images/save`,
+    data
+  )
+  console.log(response.data)
+}
