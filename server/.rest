@@ -2,11 +2,11 @@ POST http://localhost:3000/api/images/save
 Content-Type: application/json
 
 {
-    "username": "freakyfreddie",
-    "email": "freddie@mail.se",
-    "password": "12345678",
-    "confirmPassword": "12345678",
-    "address": {"street": "kfjdklf"},
-    "hobbies": ["fdf", "dfdf", "fdfd"],
-    "dateOfBirth": "1999-02-02"
+    "userId": "github|129529895",
+    "favorites": [
+        {
+          "imageUrl": "https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/2020-Chevrolet-Corvette-Stingray/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=960",
+          "title": "Here Are The Coolest New Cars For 2020"
+        }
+      ]
 }

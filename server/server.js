@@ -3,6 +3,7 @@ const app = express();
 const fs = require("fs").promises;
 const cors = require("cors");
 const { requestSchema } = require("./schemas/request.schema");
+const { validate } = require("./validate");
 
 const saveCustomer = async (body) => {
   const data = await fs.readFile("./db.json", "utf-8");
@@ -28,14 +29,7 @@ const getFavorites = async (userId) => {
 app.use(cors());
 app.use(express.json());
 
-app.post("/api/images/save", async (req, res) => {
-  const { error } = requestSchema.validate(req.body, { abortEarly: false });
-  console.log(error);
-
-  if (error) {
-    return res.status(400).json(error);
-  }
-
+app.post("/api/images/save", validate(requestSchema), async (req, res) => {
   await saveCustomer(req.body);
   res.status(200).send(req.body);
 });
