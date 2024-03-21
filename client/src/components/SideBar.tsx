@@ -8,7 +8,7 @@ export const SideBar = () => {
 
   return (
     <motion.div
-      transition={{ duration: 0.3, ease: "backInOut" }}
+      transition={{ duration: 0.3 }}
       initial={{ x: 120 }}
       animate={{ x: 0 }}
       exit={{ x: 120 }}

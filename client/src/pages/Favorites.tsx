@@ -23,7 +23,7 @@ export const Favorites = () => {
 
   {
     return favorites ? (
-      <div className="flex flex-wrap gap-5 mt-10 justify-center items-center w-[90%] m-auto">
+      <div className="flex flex-wrap gap-5 justify-center items-center w-[90%] m-auto">
         {favorites.map((favorite) => (
           <RenderFavorite url={favorite.imageUrl} title={favorite.title} />
         ))}
